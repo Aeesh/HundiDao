@@ -38,20 +38,8 @@ const CardWrap = (props) => {
         <CardContent>
          <Stack spacing={2} direction="row">
            <FullWidthTextField fieldText="Payment Interval"  placeholder="Payment Interval"/>
-            {/* <Button className={classes.inputBtn} variant="outlined"> Fund </Button> */}
           </Stack>
         </CardContent>
-        {/* <CardContent>
-          <Stack spacing={2} direction="row">
-           <FullWidthTextField fieldText="add address"  placeholder="0xfb83...b762"/>
-           <Button className={classes.inputBtn} variant="outlined"> Add </Button>
-          </Stack>
-        </CardContent> */}
-        {/* <CardActions>
-          <Stack spacing={2} direction="column">
-            <Button className={classes.btn} variant="outlined"> Fund </Button>
-          </Stack>
-        </CardActions> */}
       </Card>
     </Box>
   );
