@@ -11,6 +11,29 @@ import { connectWallet, shorten } from './util';
 
 const App = () => {
   const [account, setAccount] = useState("Connect Wallet ");
+  const [username, setUsername] = useState('');
+  const [address, setAddress] = useState('');
+  const [amount, setAmount] = useState('');
+  const [paymentInterval, setPaymentInterval] = useState('');
+  const [circleName, setCircleName] = useState('');
+
+  const handleChange = (event) => {
+    if(event.target.name === "username") {
+      setUsername(event.target.value);
+    }
+    if(event.target.name === "address") {
+      setAddress(event.target.value);
+    }
+    if(event.target.name === "interval") {
+      setPaymentInterval(event.target.value);
+    }
+    if(event.target.name === "circle") {
+      setCircleName(event.target.value);
+    }
+    if(event.target.name === "amount") {
+      setAmount(event.target.value);
+    }
+  };
 
   const getAccount = async() => {
     const res = await connectWallet();
@@ -20,7 +43,14 @@ const App = () => {
   return (
     <div className="App">
       <ButtonAppBar account={account} onClick={getAccount} />
-      <Home account={account}/>
+      <Home
+        address={address}
+        username={username}
+        amount={amount}
+        paymentInterval={paymentInterval}
+        circleName={circleName}
+        handleChange={handleChange}
+      />
     </div>
   );
 }

@@ -3,11 +3,11 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
 export default function FullWidthTextField(props) {
-  const {fieldText, placeholder} = props;
-  const [name, setName] = React.useState('');
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
+  const {fieldText, placeholder, value, handleChange, name} = props;
+  // const [name, setName] = React.useState('');
+  // const handleChange = (event) => {
+  //   setName(event.target.value);
+  // };
   return (
     <Box
       sx={{
@@ -16,11 +16,12 @@ export default function FullWidthTextField(props) {
       }}
     >
       <TextField
+        name={name}
         fullWidth
         label={fieldText}
         placeholder={placeholder}
         id="fullWidth"
-        value={name}
+        value={value}
         onChange={handleChange}
       />
     </Box>

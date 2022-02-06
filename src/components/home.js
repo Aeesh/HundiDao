@@ -16,7 +16,7 @@ import { useStyles } from './style';
 const Home = (props) => {
   const classes = useStyles();
 
-  const {text, account} = props;
+  const {text, address, username, amount, paymentInterval, circleName, handleChange } = props;
   return (
     <Box>
       <Box className={classes.cardWrap}>
@@ -26,19 +26,19 @@ const Home = (props) => {
           </CardContent>
           <CardContent>
           <Stack spacing={2} direction="row">
-            <FullWidthTextField fieldText="Username"  placeholder="Username"/>
-            <FullWidthTextField fieldText="ETH Address"  placeholder={account || "ETH Address"}/>
+            <FullWidthTextField name="username" value={username} handleChange={handleChange} fieldText="Username"  placeholder="Username"/>
+            <FullWidthTextField name="address" value={address} handleChange={handleChange} fieldText="ETH Address"  placeholder="ETH Address"/>
             </Stack>
           </CardContent>
           <CardContent>
           <Stack spacing={2} direction="row">
-            <FullWidthTextField fieldText="Circle Name"  placeholder="Circle Name"/>
-            <FullWidthTextField fieldText="Payment Amount"  placeholder="Payment Amount"/>
+            <FullWidthTextField name="circle" value={circleName} handleChange={handleChange} fieldText="Circle Name"  placeholder="Circle Name"/>
+            <FullWidthTextField name="amount" value={amount} handleChange={handleChange} fieldText="Payment Amount"  placeholder="Payment Amount"/>
             </Stack>
           </CardContent>
           <CardContent>
           <Stack spacing={2} direction="row">
-            <FullWidthTextField fieldText="Payment Interval"  placeholder="Payment Interval"/>
+            <FullWidthTextField name="interval" value={paymentInterval} handleChange={handleChange} fieldText="Payment Interval"  placeholder="Payment Interval"/>
             </Stack>
           </CardContent>
         </Card>
