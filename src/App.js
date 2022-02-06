@@ -6,6 +6,9 @@ import { ButtonAppBar } from './components/navBar';
 import { useState } from 'react';
 import { connectWallet, shorten } from './util';
 
+// import { createNewFlow, createNewFlow2, calculateFlowRate } from './createFlow';
+
+
 const App = () => {
   const [account, setAccount] = useState("Connect Wallet ");
 

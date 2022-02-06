@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
+    "graphql": "0.13.0",
     "@gumgum/react-script-tag": "0.0.3",
     "@material-ui/icons": "^4.11.2",
     "@mui/icons-material": "^5.3.1",
@@ -19,6 +20,7 @@
     "@web3auth/metamask-adapter": "^0.2.2",
     "@web3auth/openlogin-adapter": "^0.2.2",
     "@web3auth/web3auth": "^0.2.2",
+    "ethers": "^5.5.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
