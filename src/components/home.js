@@ -1,15 +1,48 @@
 import React from 'react';
 
 import Box from '@mui/material/Box';
-import CardWrap from './card';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+
+import FullWidthTextField from './form';
 
 import { useStyles } from './style';
 
-const Home = () => {
+
+const Home = (props) => {
   const classes = useStyles();
-  return(
-    <Box className={classes.boxCon}>
-      <CardWrap text= "heeee" />
+
+  const {text, account} = props;
+  return (
+    <Box>
+      <Box className={classes.cardWrap}>
+        <Card className={classes.cards}>
+          <CardContent>
+          <Typography> {text} </Typography>
+          </CardContent>
+          <CardContent>
+          <Stack spacing={2} direction="row">
+            <FullWidthTextField fieldText="Username"  placeholder="Username"/>
+            <FullWidthTextField fieldText="ETH Address"  placeholder={account || "ETH Address"}/>
+            </Stack>
+          </CardContent>
+          <CardContent>
+          <Stack spacing={2} direction="row">
+            <FullWidthTextField fieldText="Circle Name"  placeholder="Circle Name"/>
+            <FullWidthTextField fieldText="Payment Amount"  placeholder="Payment Amount"/>
+            </Stack>
+          </CardContent>
+          <CardContent>
+          <Stack spacing={2} direction="row">
+            <FullWidthTextField fieldText="Payment Interval"  placeholder="Payment Interval"/>
+            </Stack>
+          </CardContent>
+        </Card>
+      </Box>
     </Box>
   );
 }

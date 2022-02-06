@@ -25,16 +25,16 @@ export const useStyles = makeStyles({
       position: 'relative',
       background: '#fff !important',
       color: '#fff !important',
-      // background: '#efefef',
       height: '100%',
     },
-    inputBtn: {
+    btn: {
       background: '#fff !important',
-      color: '#efefef !important',
-      width: '30px',
-      height: '30px',
+      color: '#1976d2 !important',
       marginTop: '15px !important',
-      // left: '100px',
-      // right: '100px'
+      marginRight: '25px !important',
+    },
+    img: {
+      width: '150px',
+      height: '50px',
     }
 });

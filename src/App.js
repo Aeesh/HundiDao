@@ -2,15 +2,22 @@ import logo from './logo.svg';
 import './App.css';
 
 import Home from './components/home';
-import SwipeableTemporaryDrawer from './components/sideBar';
-import PersistentDrawerLeft from './components/drawer';
+import { ButtonAppBar } from './components/navBar';
+import { useState } from 'react';
+import { connectWallet, shorten } from './util';
 
-function App() {
+const App = () => {
+  const [account, setAccount] = useState("Connect Wallet ");
+
+  const getAccount = async() => {
+    const res = await connectWallet();
+    setAccount(shorten(8, 6, res));
+  }
+
   return (
     <div className="App">
-      {/* <SwipeableTemporaryDrawer /> */}
-      <PersistentDrawerLeft />
-     <Home />
+      <ButtonAppBar account={account} onClick={getAccount} />
+      <Home account={account}/>
     </div>
   );
 }
